@@ -57,11 +57,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Testing.loader.js";
+      var loaderUrl = buildUrl + "/WebGLBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Testing.data",
-        frameworkUrl: buildUrl + "/Testing.framework.js",
-        codeUrl: buildUrl + "/Testing.wasm",
+        dataUrl: buildUrl + "/WebGLBuild.data",
+        frameworkUrl: buildUrl + "/WebGLBuild.framework.js",
+        codeUrl: buildUrl + "/WebGLBuild.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MHB314184",
         productName: "DDO_Family_Quiz",
@@ -105,8 +105,7 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-                window.unityInstance = unityInstance;
+              }).then((unityInstance) => {
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
@@ -118,35 +117,6 @@
 
       document.body.appendChild(script);
 
-        // JavaScript 함수 정의
-        function CloseWindow() {
-            window.close();
-        }
     </script>
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-analytics.js";
-        import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js"
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-            apiKey: "AIzaSyBd4Km_r2DD5Xcz6H7VgcID2QYY_ncXDOo",
-            authDomain: "quizgametesting.firebaseapp.com",
-            projectId: "quizgametesting",
-            storageBucket: "quizgametesting.appspot.com",
-            messagingSenderId: "983846086633",
-            appId: "1:983846086633:web:a5a7a844f8322182a9cd78",
-            measurementId: "G-928CG4S8TX"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = getAuth(app);
-    </script>
-
   </body>
 </html>
